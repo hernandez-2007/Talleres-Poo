@@ -1,0 +1,6 @@
+Console.WriteLine("Digita tu nombre");
+string nom;
+nom = Console.ReadLine();
+Console.ForegroundColor = ConsoleColor.Red;
+Console.Clear();
+Console.Write("tu nombre es >>> " + nom + " <3 ");
