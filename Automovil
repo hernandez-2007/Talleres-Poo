@@ -1,0 +1,40 @@
+public class Automovil {
+    // 1. Variable privada para almacenar el kilometraje actual
+    private int kilometraje;
+    // Constructor para inicializar el kilometraje
+    public Automovil(int kilometrajeInicial) {
+        this.kilometraje = kilometrajeInicial;
+    }
+    // Getter: devuelve el valor actual almacenado
+    public int getKilometraje() {
+        return kilometraje;
+    }
+    // 2. Setter con lógica antifraude
+    public void setKilometraje(int value) {
+        /*  
+         * Solo se permite asignar el nuevo valor si es MAYOR
+         * que el kilometraje guardado actualmente.
+         * Si es menor, se ignora el intento (fraude detectado).
+         */
+        if (value > this.kilometraje) {
+            this.kilometraje = value;
+        } else {
+	System.out.println("------------------------------------------------------------");
+            System.out.println("Intento de disminuir el kilometraje ignorado.");
+        }
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        // Crear auto con 10,000 km
+        Automovil auto = new Automovil(10000);
+        System.out.println("Kilometraje inicial: " + auto.getKilometraje() + " km");
+        // Intento válido: aumentar
+        auto.setKilometraje(12000);
+        System.out.println("Después de subir a 12,000 km: " + auto.getKilometraje() + " km");
+        // Intento inválido: reducir el kilometraje
+        auto.setKilometraje(5000);
+        System.out.println("Después del intento de bajar a 5,000 km: " + auto.getKilometraje() + " km");
+        // Debe permanecer en 12,000 km
+    }
+}
