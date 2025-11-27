@@ -1,0 +1,36 @@
+class Usuario {
+    private String username;
+    private String password; // NO se puede leer
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    public String getUsername() {
+        return this.username;
+    }
+    public void setPassword(String pass) {
+        this.password = pass;
+    }
+    public boolean verificarPassword(String intento) {
+        return this.password.equals(intento);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        java.util.Scanner sc = new java.util.Scanner(System.in);
+        Usuario u = new Usuario();
+        System.out.print("Cree un nombre de usuario: ");
+        String user = sc.nextLine();
+        u.setUsername(user);
+        System.out.print("Cree una contraseña: ");
+        String pass = sc.nextLine();
+        u.setPassword(pass); // NO se puede obtener con getter
+        System.out.print("Digite la contraseña para iniciar sesión: ");
+        String intento = sc.nextLine();
+        if (u.verificarPassword(intento)) {
+            System.out.println("Inicio de sesión exitoso.");
+        } else {
+            System.out.println("Contraseña incorrecta.");
+        }
+        sc.close();
+    }
+}
