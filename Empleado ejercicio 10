@@ -1,0 +1,42 @@
+public class Empleado3 {
+
+    // 1. Variable privada de respaldo
+    private String correoCorporativo;
+
+    // Getter normal
+    public String getCorreoCorporativo() {
+        return correoCorporativo;
+    }
+
+    // 2. Setter con validación del símbolo '@'
+    public void setCorreoCorporativo(String value) {
+
+        /* 
+         * Antes de asignar, se valida que el texto contenga '@'.
+         * Si no lo contiene, el sistema rechaza el dato.
+         */
+        if (value.contains("@")) {
+            this.correoCorporativo = value;
+        } else {
+            System.out.println("Formato inválido"); // Mensaje requerido
+        }
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+
+        Empleado3 emp = new Empleado3();
+
+        // Intento inválido: no contiene '@'
+        emp.setCorreoCorporativo("usuario.com");
+
+        // Mostrar lo que quedó almacenado
+        System.out.println("Correo actual: " + emp.getCorreoCorporativo());
+        // Debe quedar null porque no se asignó
+         
+        // Intento válido
+        emp.setCorreoCorporativo("usuario@empresa.com");
+
+        System.out.println("Correo actual: " + emp.getCorreoCorporativo());
+    }
+}
