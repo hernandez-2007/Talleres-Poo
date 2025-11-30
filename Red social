@@ -1,0 +1,21 @@
+// Usuario.java
+public class Usuario {
+    protected String username;
+    protected String email;
+    public void login() {
+        System.out.println("Login exitoso");
+    }
+}
+public class Admin extends Usuario {
+    String nivelAcceso;
+    public static void main(String[] args) {
+        Admin admin = new Admin();
+        admin.username = "Administrador principal de facebook";
+        admin.email = "milhersan65@gmail.com";
+        admin.nivelAcceso = "Total";
+        admin.login();  // método heredado
+        System.out.println("Username: " + admin.username);
+        System.out.println("Email: " + admin.email);
+        System.out.println("Nivel de Acceso: " + admin.nivelAcceso);
+    }
+}
