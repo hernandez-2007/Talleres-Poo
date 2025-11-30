@@ -1,1 +1,25 @@
-
+// Producto.java
+public class Producto {
+    String codigo;
+    String nombre;
+    // Método para imprimir los datos del producto
+    public void imprimirDatos() {
+        System.out.println("Código: " + codigo);
+        System.out.println("Nombre: " + nombre);
+    }
+}
+public class Perecedero extends Producto {
+    String fechaCaducidad;
+    public static void main(String[] args) {
+        // Crear objeto Perecedero
+        Perecedero p = new Perecedero();
+        // Asignar valores a los atributos heredados
+        p.codigo = "A123";
+        p.nombre = "Yogurt Natural";
+        // Asignar valor al atributo propio
+        p.fechaCaducidad = "2025-06-15";
+        // Mostrar toda la información
+        p.imprimirDatos(); // Método heredado
+        System.out.println("Fecha de Caducidad: " + p.fechaCaducidad);
+    }
+}
