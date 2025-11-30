@@ -1,0 +1,19 @@
+public class Personal {
+    String nombre;
+    String idEmpleado;
+}
+public class Profesor extends Personal {
+    String especialidad;
+    public static void main(String[] args) {
+
+        Profesor prof = new Profesor();
+
+        prof.nombre = "Carlos Gómez";
+        prof.idEmpleado = "EMP-0021";
+        prof.especialidad = "Matemáticas";
+
+        System.out.println("Nombre: " + prof.nombre);
+        System.out.println("ID Empleado: " + prof.idEmpleado);
+        System.out.println("Especialidad: " + prof.especialidad);
+    }
+}
