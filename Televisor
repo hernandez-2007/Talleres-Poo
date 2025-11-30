@@ -1,0 +1,19 @@
+public class Dispositivo {
+    String marca;
+    boolean encendido;
+    public void conectarCorriente() {
+        encendido = true;
+        System.out.println("Dispositivo conectado y encendido.");
+    }
+}
+public class Televisor extends Dispositivo {
+    int pulgadas;
+    public static void main(String[] args) {
+        Televisor tv = new Televisor();
+        tv.marca = "Samsung";
+        tv.pulgadas = 55;
+        tv.conectarCorriente(); // método heredado
+        System.out.println("Marca: " + tv.marca);
+        System.out.println("Pulgadas: " + tv.pulgadas);
+    }
+}
